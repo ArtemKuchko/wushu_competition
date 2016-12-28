@@ -8,6 +8,8 @@ use App;
 
 use App\Group;
 
+use DB;
+
 class GroupController extends Controller
 {
     //
@@ -36,8 +38,29 @@ class GroupController extends Controller
 		$group -> save();
 		
 		return redirect ('/groups');
+				
+	}
+	
+	public function edit($id)
+	{		
+		//dd($id);
+		$group = Group::find($id);
+		session('group_id', $id);
 		
+		return view ('edit_group', ['group' => $group, 'id' => $id] );
 		
 	}
+	
+	public function update(Request $request)
+	{
+			$id = $request->session()->get('group_id');
+			
+			DB::table('groups')->where('id', $id)->update(['name' => $request -> name,
+														  'gender' => $request -> gender]);
+																
+			//return redirect ('/groups'); 
+		
+	}
+	
 	
 }

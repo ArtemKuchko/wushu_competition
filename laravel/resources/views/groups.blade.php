@@ -4,7 +4,7 @@
 
 <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Добавление весовых категорий</h1>
+                    <h1 class="page-header">Добавление возрастных групп </h1>
                 </div>
                 <!-- /.col-lg-12 -->
 </div>
@@ -17,9 +17,9 @@
 <div class="row">
 <!--<div class="col-lg-6">-->
                     <!--<div class="panel panel-default">-->
-                        <div class="panel-heading">
+                        <!--<div class="panel-heading">
                             Возрастные группы
-                        </div>
+                        </div>-->
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -46,8 +46,8 @@
 												Женский
 											@endif
 											</td>
-                                            <td><a href="{{url('/category_group')}}"><button type="button" class="btn btn-success">Категории <i class="fa fa-arrow-right"></i></button></a></td>
-                                            <td><button type="button" class="btn btn-primary">Редактировать</button></td>
+                                            <td><a href="{{ url('/category_group')}}"><button type="button" class="btn btn-success">Категории <i class="fa fa-arrow-right"></i></button></a></td>
+                                            <td><a href="{{ route('editGroup', ['id' => $group->id] ) }}"><button type="button" class="btn btn-primary" value="" >Редактировать</button></a></td>
 											<td><button type="button" class="btn btn-danger">Удалить</button></td>
                                         </tr>
 										@endforeach

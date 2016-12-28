@@ -68,3 +68,7 @@ Route::post('/add_group', 'GroupController@add');
 
 Route::get('/groups', 'GroupController@show');
 
+Route::get('/edit_group_{id}', 'GroupController@edit')->name('editGroup');
+
+Route::post('/edit_group', 'GroupController@update');
+

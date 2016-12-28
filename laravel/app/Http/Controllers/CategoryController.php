@@ -24,5 +24,13 @@ class CategoryController extends Controller
 		$category-> save();
 						
 	}
+	
+	pubic function edit_category ()
+	{
+		
+		
+		
+	}
+	
 		
 }

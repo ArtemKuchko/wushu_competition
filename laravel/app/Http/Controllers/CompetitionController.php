@@ -62,19 +62,16 @@ class CompetitionController extends Controller
 	}
 	
 	public function update_competition (Request $request, Competition $competition)
-	{	
-		//from session:
-		//$competition_number = $request->session()->get('competition_number');
-		
+	{			
 		$id = $request->session()->get('id');
 				
 		DB::table('competitions')->where('id', $id)->update(['name' => $request-> name, 
-																			'place' => $request-> place,
-																			'date_start' => $request->date_start,
-																			'date_end' => $request->date_end,
-																			'dead_line'=> $request->dead_line,
-																			'level'=> $request->level,
-																			'description'=> $request->description
+															'place' => $request-> place,
+															'date_start' => $request->date_start,
+															'date_end' => $request->date_end,
+															'dead_line'=> $request->dead_line,
+															'level'=> $request->level,
+															'description'=> $request->description
 																			
 																			]);	
 				
